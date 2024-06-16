@@ -24,7 +24,7 @@ public class ReservaResource {
         return ResponseEntity.ok().body(lista);
     }
 
-    @GetMapping(value = "/{cod}")
+    @GetMapping(value = "/reservas/{cod}")
     public ResponseEntity<Reserva> buscarPorCod(@PathVariable Integer cod) {
         Reserva obj = service.buscarPorCod(cod);
         return ResponseEntity.ok().body(obj);

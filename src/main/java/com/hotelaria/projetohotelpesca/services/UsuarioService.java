@@ -19,7 +19,7 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Usuario findById(Integer id) {
+    public Usuario findById(Long id) {
         return usuarioRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado com ID: " + id));
     }
@@ -28,14 +28,24 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         if (!usuarioRepository.existsById(id)) {
             throw new ResourceNotFoundException("Usuário não encontrado com ID: " + id);
         }
         usuarioRepository.deleteById(id);
     }
+//por hora deixar depois remover
+    public boolean validateLogin(String login, String password) {
+        Usuario usuario = usuarioRepository.findByUsuario(login);
+        return usuario != null && usuario.getSenha().equals(password);
+    }
 
-    public Usuario update(Integer id, Usuario usuarioDetails) {
+    public Usuario registerUser(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+//ate aqui
+
+    public Usuario update(Long id, Usuario usuarioDetails) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado com ID: " + id));
 

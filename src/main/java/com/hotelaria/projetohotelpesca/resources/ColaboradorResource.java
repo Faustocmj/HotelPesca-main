@@ -25,7 +25,7 @@ public class ColaboradorResource {
         return ResponseEntity.created(uri).body(colaborador);
     }
 
-    @DeleteMapping(value = "/{cod}")
+    @DeleteMapping(value = "/colaboradores/{cod}")
     public ResponseEntity<Void> deletar(@PathVariable Integer cod){
         service.deletar(cod);
         return ResponseEntity.noContent().build();
@@ -37,7 +37,7 @@ public class ColaboradorResource {
         return ResponseEntity.ok().body(lista);
     }
 
-    @GetMapping(value = "/{cod}")
+    @GetMapping(value = "/colaboradores/{cod}")
     public ResponseEntity<Colaborador> buscarPorCod(@PathVariable Integer cod) {
         Colaborador obj = service.buscarPorCod(cod);
         return ResponseEntity.ok().body(obj);

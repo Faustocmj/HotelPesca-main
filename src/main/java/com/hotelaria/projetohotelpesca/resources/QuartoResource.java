@@ -26,7 +26,7 @@ public class QuartoResource {
         return ResponseEntity.ok().body(lista);
     }
 
-    @GetMapping(value = "/{cod}")
+    @GetMapping(value = "/quartos/{cod}")
     public ResponseEntity<Quarto> buscarPorCod(@PathVariable Integer cod) {
         Quarto obj = service.buscarPorCod(cod);
         return ResponseEntity.ok().body(obj);
