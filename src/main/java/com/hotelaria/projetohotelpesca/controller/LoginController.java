@@ -4,32 +4,35 @@ import com.hotelaria.projetohotelpesca.entities.Usuario;
 import com.hotelaria.projetohotelpesca.services.UsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class LoginController {
 
     @Autowired
     private UsuarioService userService;
 
+    @GetMapping("/login")
+    public String home(){
+        return "login";
+    }
+
     @PostMapping("/login")
-    public Map<String, String> login(@RequestBody Map<String, String> credentials) {
+    public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> credentials) {
         String usuario = credentials.get("usuario");
         String senha = credentials.get("senha");
 
-        Map<String, String> response = new HashMap<>();
-        if (userService.validateLogin(usuario, senha)) {
-            response.put("status", "success");
-            response.put("message", "Login efetuado com sucesso");
+        if (userService.authenticate(usuario, senha)) {
+            return ResponseEntity.ok(Map.of("status", "success", "message", "Login efetuado com sucesso"));
         } else {
-            response.put("status", "error");
-            response.put("message", "Login incorreto");
+            return ResponseEntity.badRequest().body(Map.of("status", "error", "message", "Login incorreto"));
         }
-        return response;
     }
 
     @PostMapping("/register")

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Erro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #e74c3c;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Erro</h1>
+        <p><span class="label">Timestamp:</span> <span th:text="${timestamp}"></span></p>
+        <p><span class="label">Status:</span> <span th:text="${status}"></span></p>
+        <p><span class="label">Erro:</span> <span th:text="${error}"></span></p>
+        <p><span class="label">Mensagem:</span> <span th:text="${message}"></span></p>
+        <p><span class="label">Caminho:</span> <span th:text="${path}"></span></p>
+        <p th:if="${exception}"><span class="label">Exceção:</span> <span th:text="${exception}"></span></p>
+    </div>
+</body>
+</html>

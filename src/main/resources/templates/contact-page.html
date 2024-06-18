@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hotéis Estrela - Página de Contato</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./assets/css/global-header.css" />
+		<link rel="stylesheet" href="./assets/css/global-footer.css" />
+		<link rel="stylesheet" href="./assets/css/accesibility.css">
+		<link rel="stylesheet" href="./assets/css/contact-page.css" />
+		<link
+			rel="shortcut icon"
+			href="./assets/img/favicon.webp"
+			type="image/x-icon"
+		/>
+	</head>
+	<body>
+		<header>
+			<div class="header-container">
+				<nav class="header-nav-bar">
+					<div class="header-nav-logo">
+						<a href="index.html">
+							<img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
+								alt="logo dos hotéis estrela">
+						</a>
+					</div>
+					<ul class="header-nav-lists">
+						<li class="header-nav-list">
+							<a class="header-nav-link" href="index.html">Início</a>
+						</li>
+						<li class="header-nav-list">
+							<a class="header-nav-link" href="rooms-and-suites.html"
+								>Quartos e Suítes</a
+							>
+						</li>
+						<li class="header-nav-list">
+							<a class="header-nav-link" href="facilities.html">Instalações</a>
+						</li>
+						<li class="header-nav-list">
+							<a class="header-nav-link header-active" href="contact-page.html"
+								>Contato</a
+							>
+						</li>
+						<li class="header-nav-list">
+							<a class="header-btn header-btn-custom" href="login.html">RESERVE AGORA</a>
+						</li>
+					</ul>
+
+					<div class="header-hamburger-icon">
+						<div class="header-hamburger-line-1"></div>
+						<div class="header-hamburger-line-2"></div>
+						<div class="header-hamburger-line-3"></div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<!-- Parte do Cabeçalho contém o título da página e descrição -->
+				<div class="header">
+					<h2>Contate-nos</h2>
+					<hr/>
+					<p>
+						Interessado em estabelecer uma parceria ou você tem alguma reclamação ou
+						comentário? Preencha o formulário abaixo
+					</p>
+				</div>
+
+				<!-- Fim da Parte do Cabeçalho -->
+
+				<!-- Parte principal contém formulário e informações de contato -->
+				<div class="main">
+					<div class="contact">
+						<!-- Formulário começa aqui -->
+						<div class="contact-form">
+							<form action="#">
+								<div class="contact-detail">
+									<label class="hide" for="name">Digite seu nome</label>
+									<input type="text" class="form-control" placeholder="Nome" id="name" />
+									<label class="hide" for="email">Digite seu endereço de e-mail</label>
+									<input
+										type="email"
+										class="form-control"
+										placeholder="E-mail"
+										id="email"
+										name="email"
+									/>
+								</div>
+								<label class="hide" for="message">mensagem</label>
+								<textarea
+									class="form-control"
+									rows="5"
+									id="comment"
+									placeholder="Mensagem"
+									style="resize: none; width: 100%;"
+									name="message"
+								></textarea>
+
+								<button type="submit" class="btn">ENVIAR MENSAGEM</button>
+							</form>
+						</div>
+						<!-- Formulário termina aqui -->
+
+						<!-- Contate-nos começa aqui -->
+						<div class="contact-us">
+							<h3>Contate-nos</h3>
+
+							<span
+								><i
+									style="font-size: 1.5rem;"
+									class="fa fa-map-marker"
+									aria-hidden="true"
+								></i
+								>23, Fola osibo, Lekki&nbsp;fase&nbsp;1</span
+							>
+							<span
+								><i
+									style="font-size: 1.5rem;"
+									class="fa fa-phone"
+									aria-hidden="true"
+								></i
+								>08185956620</span
+							>
+							<span
+								><i
+									style="font-size: 1.5rem;"
+									class="fa fa-envelope-o"
+									aria-hidden="true"
+								></i
+								>Support@starhotels.com</span
+							>
+						</div>
+						<!-- Contate-nos Termina aqui -->
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<nav class="footer-nav">
+					<div class="footer-description">
+						<h3 class="footer-description-title">Hotéis Estrela</h3>
+						<p>Hospitalidade e Conforto são nossas palavras-chave</p>
+					</div>
+					<div class="footer-contact-us">
+						<h3 class="footer-description-title">Contate-nos</h3>
+						<p class="footer-description-detail"> 
+							<img src="./assets/img/map-pin.svg" class="footer-description-icon" alt="localização do hotel estrela">
+	
+							<span>23, Fola Osibo, Lekki Fase 1</span></p>
+						<p class="footer-description-detail">
+							<img src="./assets/img/phone.svg" class="footer-description-icon" alt="número de telefone dos hotéis estrela"> 
+							<span>
+						 08185956620</span></p>
+						<p class="footer-description-detail">
+							<img src="./assets/img/mail.svg" class="footer-description-icon" alt="e-mail dos hotéis estrela">
+							<span>support@starhotels.com</span> </p>
+					</div>
+					<div class="footer-follow-us">
+						<h3 class="footer-description-title">Siga-nos</h3>
+						<ul class="footer-follow-us-lists">
+							<li class="follow-us-list">
+								<a href="">
+									<img src="./assets/img/facebook.svg" alt="página do facebook dos hotéis estrela">
+								</a>
+							</li>
+							<li class="follow-us-list">
+								<a href="">
+									<img src="./assets/img/twitter.svg" alt="página do twitter dos hotéis estrela">
+								</a>
+							</li>
+							<li class="follow-us-list">
+								<a href="">
+									<img src="./assets/img/instagram.svg" alt="página do instagram dos hotéis estrela">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</footer>
+		<script src="assets/js/toggleHamburger.js"></script>
+	</body>
+</html>

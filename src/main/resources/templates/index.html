@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Star Hotels ajuda você a descobrir o equilíbrio perfeito
+	entre hospitalidade, luxo e
+	conforto.">
+	<title>Hotéis Estrela</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./assets/css/global-header.css">
+	<link rel="stylesheet" href="./assets/css/global-footer.css">
+	<link rel="stylesheet" href="./assets/css/accesibility.css">
+	<link rel="stylesheet" href="./assets/css/index.css">
+	<link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon">
+</head>
+<body class="scroll-bar">
+	<div id="loader">
+		<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+			<path fill="#d4af37" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+				<animateTransform 
+					attributeName="transform" 
+					attributeType="XML" 
+					type="rotate"
+					dur="1s" 
+					from="0 50 50"
+					to="360 50 50" 
+					repeatCount="indefinite" />
+		</path>
+		</svg>
+	</div>
+   <header>
+      <div class="header-container">
+         <nav class="header-nav-bar">
+				<div class="header-nav-logo">
+					<a href="index.html">
+						<img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
+							alt="logotipo dos hotéis estrela">
+					</a>
+				</div>
+				<ul class="header-nav-lists">
+						<li class="header-nav-list">
+							<a class="header-nav-link header-active" href="index.html">Início</a>
+						</li>
+						<li class="header-nav-list"><a class="header-nav-link"
+								href="rooms-and-suites.html">Quartos e Suítes</a></li>
+						<li class="header-nav-list"><a class="header-nav-link" href="facilities.html">Instalações</a></li>
+						<li class="header-nav-list"><a class="header-nav-link" href="contact-page.html">Contate-nos</a></li>
+						<li class="header-nav-list"><a class="header-btn header-btn-custom" href="login.html">RESERVE AGORA</a></li>
+					</ul>
+            
+            <div class="header-hamburger-icon">
+               <div class="header-hamburger-line-1"></div>
+               <div class="header-hamburger-line-2"></div>
+               <div class="header-hamburger-line-3"></div>
+            </div>
+         </nav>
+      </div>
+
+      </div>
+	</header>
+
+	<div class="jumbotron-container">
+		<div class="jumbotron-left">
+			<h2 class="jumbotron-header">Descubra o equilíbrio perfeito <br> entre hospitalidade, luxo e <br> conforto.</h2>
+			<p>Estamos focados em proporcionar aos clientes o mais alto nível <br>
+					de conforto e excelentes tarifas acessíveis.</p>
+					<a href="login.html" class="btn btn-fill btn-large">Reserve Agora</a>
+		</div>
+		<div class="jumbotron-right">
+			<form action="" class="jumbotron-form">
+				<!-- Colocar o formulário aqui -->
+					<h3>Achou que não pode pagar?</h3><br>
+					<p>Não se preocupe, nosso hotel oferece as melhores <br> tarifas acessíveis que você pode encontrar.</p>
+					<label class="hide" for="arrival">data de chegada</label>
+					<input type="text" id="arrival" name="arrival_date" placeholder="Data de Chegada" onfocus="(this.type='date')" ><br>
+					<label class="hide" for="departure">data de partida</label>
+					<input type="text"  id="departure" name="departure_date" placeholder="Data de Partida" onfocus="(this.type='date')" ><br>
+					<label class="hide" for="guests">quantos hóspedes</label>
+					<input type="text" id="guests" name="guests" placeholder="Hóspedes"><br>
+					<label class="hide" for="children">crianças</label>
+					<input type="text" id="children" name="children" placeholder="Crianças"><br>
+					<button type="button" class="rates">VERIFICAR TARIFAS</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Aproveite sua estadia em nosso hotel -->
+	<div class="enjoy-container">
+		<div class="enjoy-header">
+			<h2 class="enjoy-heading">Aproveite sua estadia <br> em nosso hotel</h2>
+			<hr class="horizontal">
+			<p>Somos mais do que um hotel porque somos capazes <br> de combinar o padrão de qualidade de um hotel com as <br> vantagens de um apartamento.</p>
+		</div>
+	<div class="enjoy-services">
+		<div class="first-col">
+			<div class="upper">
+					<span>
+						<img src="./assets/img/clock.svg" alt="ícone de relógio" class="enjoy__clock-icon">
+					</span>
+					<h3>Serviço de Quarto 24 horas</h3>
+					<p>Você tem acesso ao serviço de quarto 24 horas por dia em nosso hotel.</p>
+			</div>
+			<div class="lower">
+				<span>
+					<img src="./assets/img/database.svg" alt="ícone de fitness" class="enjoy__fitness-icon">
+				</span>
+				<h3>Fitness e Spa</h3>
+				<p>O acesso ao fitness e Spa faz parte do nosso pacote de hotel quando você faz uma reserva.</p>
+			</div>
+			
+		</div>
+		<div class="sec-col">
+				<div class="upper">
+					<span>
+						<img src="./assets/img/coffee.svg" alt="ícone de café" class="enjoy__coffee-icon">
+					</span>
+						<h3>Restaurante e Bares</h3>
+					<p>Você tem acesso aos restaurantes e bares de última geração em nosso hotel</p>
+				</div>
+				<div class="lower">
+					<span>
+						<img src="./assets/img/wifi.svg" alt="ícone de wifi" class="enjoy__wifi-icon">
+					</span>
+						<h3>Acesso Wi-Fi Gratuito</h3>
+						<p>Você tem acesso a serviços gratuitos de Wi-Fi 24 horas, independentemente do quarto.</p>
+				</div>
+		</div>
+		<div class="third-col cont">
+			<img src="./assets/img/ant-design_play-circle-filled.svg" alt="ícone de reprodução de vídeo" class="enjoy__play-icon">
+			<img src="./assets/img/video link.webp" alt="mulher na piscina" class="third-col-video">
+		</div>
+	</div>
+
+	</div>
+	<section class="special-offers">
+		<!-- Top Text -->
+		<div class="page-header-container">
+
+		  <h2 class="page-header">Simplicidade é a última <br>Palavra de Ordem</h2>
+	
+            
+            </div>
+			<div class="row center-lg">
+				<div class="col image-col right-marg">
+					<img src="assets/img/hotel-1.webp" alt="imagem do quarto" class="small-image">
+					<img src="assets/img/hotel-2.webp" alt="imagem do quarto" class="small-image">
+					<img src="assets/img/hotel-3.webp" alt="imagem do quarto" class="small-image img-hide">
+					<div class="side-by-side-container">
+						<div class="large-image-container">
+							<img src="assets/img/hotel-4-large.webp" alt="imagem do quarto grande" class="large-image">
+						</div>
+						<section class="stacked-image-container">
+						  <div><img src="assets/img/hotel-5.webp" alt="imagem do quarto" class="small-image"></div>
+						  <div><img src="assets/img/hotel-6.webp" alt="imagem do quarto" class="small-image"></div>
+						</section>
+					</div>
+				</div>
+				<div class="col">
+					<p class="offers-sub-title">
+							O fato de sermos administrados por profissionais da hospitalidade <br> e equipados com os melhores designers de interiores do mundo <br> é por isso que nossos quartos e suítes são incomparáveis no <br> universo
+					</p>
+					<ul class="offers-list">
+						<li>
+							<div>
+								<img src="assets/img/check-square.svg" alt="marca de seleção" class="list-icon">
+								<p class="list-text">Quarto Padrão</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<img src="assets/img/check-square.svg" alt="marca de seleção" class="list-icon">
+								<p class="list-text">Quarto Executivo</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<img src="assets/img/check-square.svg" alt="marca de seleção" class="list-icon">
+								<p class="list-text">Suíte King</p>
+							</div>
+						</li>
+					</ul>
+					<a href="login.html" class="btn btn-fill btn-large centered">Reserve Agora</a>
+				</div>
+			</div>
+		</section>
+
+	<!-- Avaliações dos clientes -->
+	<div class="review-container">
+		<div class="review-header">
+			<h2 class="review-title">
+				Avaliações dos Clientes
+			</h2>
+			<hr class="horizontal">
+			<p class="">Estamos muito orgulhosos dos serviços que oferecemos aos nossos clientes.<br>Leia cada palavra dos nossos clientes felizes.</p>
+		</div>
+		<div class="cards-container">
+				<div class="card">
+					<img src="./assets/img/customer1.webp" alt="" class="card-avi">
+					<h2 class="card-title">
+							Mark Essien
+					</h2>
+					<h3 class="card-subtitle">
+						Lagos, Nigéria.
+					</h3>
+					<p class="card-desc">Palavras não podem explicar o tipo de tratamento que recebi da administração dos hotéis estrela. Eles são os melhores do país.</p>
+				</div>
+				<div class="card">
+					<img src="./assets/img/customer2.webp" alt="" class="card-avi">
+					<h2 class="card-title">
+							Seyi Onifade
+					</h2>
+					<h3 class="card-subtitle">
+							Lagos, Nigéria.
+					</h3>
+					<p class="card-desc">Os hotéis estrela fazem você sentir a melhor qualidade de quarto que faz você se sentir o conforto de uma casa.</p>
+				</div>
+				<div class="card">
+					<img 
+						src="./assets/img/customer3.webp" 
+						alt="" 
+						class="card-avi">
+					<h2 class="card-title">
+						Fayemi David
+					</h2>
+					<h3 class="card-subtitle">
+						Lagos, Nigéria.
+					</h3>
+					<p class="card-desc">Minha família e eu estamos muito felizes quando nos hospedamos nos hotéis estrela. Eles são de longe os melhores do universo.</p>
+				</div>
+				
+
+				</div>
+	</div>
+	<footer class="footer">
+		<div class="footer-container">
+			<nav class="footer-nav">
+				<div class="footer-description">
+					<h3 class="footer-description-title">Hotéis Estrela</h3>
+					<p>Hospitalidade e Conforto são nossas palavras de ordem</p>
+				</div>
+				<div class="footer-contact-us">
+					<h3 class="footer-description-title">Contate-nos</h3>
+					<p class="footer-description-detail"> 
+						<img src="./assets/img/map-pin.svg" class="footer-description-icon" alt="localização dos hotéis estrela">
+
+						<span>23, Fola Osibo, Lekki Phase 1</span></p>
+					<p class="footer-description-detail">
+						<img src="./assets/img/phone.svg" class="footer-description-icon" alt="número de telefone dos hotéis estrela"> 
+						<span>
+					 08185956620</span></p>
+					<p class="footer-description-detail">
+						<img src="./assets/img/mail.svg" class="footer-description-icon" alt="e-mail dos hotéis estrela">
+						<span>support@starhotels.com</span> </p>
+				</div>
+				<div class="footer-follow-us">
+					<h3 class="footer-description-title">Siga-nos</h3>
+					<ul class="footer-follow-us-lists">
+						<li class="follow-us-list">
+							<a href="">
+								<img src="./assets/img/facebook.svg" alt="página do Facebook dos hotéis estrela">
+							</a>
+						</li>
+						<li class="follow-us-list">
+							<a href="">
+								<img src="./assets/img/twitter.svg" alt="página do Twitter dos hotéis estrela">
+							</a>
+						</li>
+						<li class="follow-us-list">
+							<a href="">
+								<img src="./assets/img/instagram.svg" alt="página do Instagram dos hotéis estrela">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</footer>
+	<script defer async>
+		(() => {
+			const loader = document.getElementById('loader');
+			const scrollBar = document.getElementsByClassName('scroll-bar')[0];
+			window.addEventListener('load', () => {
+				loader.classList.add('none');
+				scrollBar.classList.remove('scroll-bar')
+			});
+		})();
+	</script>
+	<script  defer async src="assets/js/toggleHamburger.js"></script>
+</body>
+</html>

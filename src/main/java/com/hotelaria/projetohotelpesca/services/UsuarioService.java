@@ -35,9 +35,9 @@ public class UsuarioService {
         usuarioRepository.deleteById(id);
     }
 //por hora deixar depois remover
-    public boolean validateLogin(String login, String password) {
-        Usuario usuario = usuarioRepository.findByUsuario(login);
-        return usuario != null && usuario.getSenha().equals(password);
+    public boolean authenticate(String codusuario, String senha) {
+        Usuario usuario = usuarioRepository.findByUsuario(codusuario);
+        return usuario!= null && usuario.getSenha().equals(senha);
     }
 
     public Usuario registerUser(Usuario usuario) {
