@@ -80,27 +80,18 @@
     <div class="container">
         <h2>Lista de Usuários Cadastrados</h2>
         <ul class="user-list">
-            <li class="user-item">
+            <li class="user-item" th:each="usuario : ${usuarios}">
                 <div class="user-details">
-                    <strong>Usuário 1</strong>
-                    <p>Detalhes do usuário 1...</p>
+                    <strong th:text="${usuario.nome}">Nome do Usuário</strong>
+                    <p th:text="${usuario.cpf}">Detalhes do usuário...</p>
                 </div>
                 <div class="user-actions">
-                    <a href="#" class="btn">Editar</a>
-                    <a href="#" class="btn">Excluir</a>
+                    <a th:href="@{/api/usuarios/{id}/editar(id=${usuario.codUsuario})}" class="btn">Editar</a>
+                    <a th:href="@{/api/usuarios/{id}/delete(id=${usuario.codUsuario})}"
+                       class="btn"
+                       onclick="return confirm('Tem certeza que deseja deletar este usuário?')">Excluir</a>
                 </div>
             </li>
-            <li class="user-item">
-                <div class="user-details">
-                    <strong>Usuário 2</strong>
-                    <p>Detalhes do usuário 2...</p>
-                </div>
-                <div class="user-actions">
-                    <a href="#" class="btn">Editar</a>
-                    <a href="#" class="btn">Excluir</a>
-                </div>
-            </li>
-            <!-- Adicione mais usuários conforme necessário -->
         </ul>
     </div>
 
