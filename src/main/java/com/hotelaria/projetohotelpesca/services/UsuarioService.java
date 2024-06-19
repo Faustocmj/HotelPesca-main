@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -38,10 +37,6 @@ public class UsuarioService {
     public boolean authenticate(String codusuario, String senha) {
         Usuario usuario = usuarioRepository.findByUsuario(codusuario);
         return usuario!= null && usuario.getSenha().equals(senha);
-    }
-
-    public Usuario registerUser(Usuario usuario) {
-        return usuarioRepository.save(usuario);
     }
 //ate aqui
 

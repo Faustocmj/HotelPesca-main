@@ -2,36 +2,34 @@
 <html lang="pt">
 <head>
    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Área de Login - Hotéis Estrela</title>
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/css/global-header.css">
-	<link rel="stylesheet" href="/assets/css/global-footer.css">
-	<link rel="stylesheet" href="/assets/css/accesibility.css">
-	<link rel="stylesheet" href="/assets/css/login.css">
-	<link rel="shortcut icon" href="/assets/img/favicon.webp" type="image/x-icon">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Área de Login - Hotéis Estrela</title>
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/assets/css/global-header.css">
+   <link rel="stylesheet" href="/assets/css/global-footer.css">
+   <link rel="stylesheet" href="/assets/css/accesibility.css">
+   <link rel="stylesheet" href="/assets/css/login.css">
+   <link rel="shortcut icon" href="/assets/img/favicon.webp" type="image/x-icon">
 </head>
 <body class="scroll-bar">
    <header>
       <div class="header-container">
          <nav class="header-nav-bar">
-				<div class="header-nav-logo">
-					<a href="index.html">
-						<img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
-							alt="Logotipo dos Hotéis Estrela">
-					</a>
-				</div>
-				<ul class="header-nav-lists">
-						<li class="header-nav-list">
-							<a class="header-nav-link header-active" href="index.html">Página Inicial</a>
-						</li>
-						<li class="header-nav-list"><a class="header-nav-link"
-								href="rooms-and-suites.html">Quartos e Suítes</a></li>
-						<li class="header-nav-list"><a class="header-nav-link" href="facilities.html">Instalações</a></li>
-						<li class="header-nav-list"><a class="header-nav-link" href="contact-page.html">Fale Conosco</a></li>
-						<li class="header-nav-list"><a class="header-btn header-btn-custom" href="https://timbu.com/search?query=hotel">RESERVE AGORA</a></li>
-					</ul>
-            
+            <div class="header-nav-logo">
+               <a href="index.html">
+                  <img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
+                       alt="Logotipo dos Hotéis Estrela">
+               </a>
+            </div>
+            <ul class="header-nav-lists">
+               <li class="header-nav-list">
+                  <a class="header-nav-link header-active" href="index.html">Página Inicial</a>
+               </li>
+               <li class="header-nav-list"><a class="header-nav-link" href="rooms-and-suites.html">Quartos e Suítes</a></li>
+               <li class="header-nav-list"><a class="header-nav-link" href="facilities.html">Instalações</a></li>
+               <li class="header-nav-list"><a class="header-nav-link" href="contact-page.html">Fale Conosco</a></li>
+               <li class="header-nav-list"><a class="header-btn header-btn-custom" href="https://timbu.com/search?query=hotel">RESERVE AGORA</a></li>
+            </ul>
             <div class="header-hamburger-icon">
                <div class="header-hamburger-line-1"></div>
                <div class="header-hamburger-line-2"></div>
@@ -39,80 +37,83 @@
             </div>
          </nav>
       </div>
-	</header>
+   </header>
 
-    <main>
-        <div class="login-container">
-            <h2 class="login-title">Área de Login</h2>
-            <form class="login-form" method="post" action="/api/login">
-                <div class="form-group">
-                    <label class="form-label" for="email">Usuario</label>
-                    <input type="text" name="codUsuario">
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="password">Senha</label>
-                    <input type="text" id="password" name="senha" placeholder="Senha" required>
-                </div>
-                <button type="submit" class="btn btn-fill btn-large centered">Login</button>
-            </form>
-        </div>
-    </main>
-    
+   <main>
+      <div class="login-container">
+         <h2 class="login-title">Área de Login</h2>
+         <form class="login-form" method="post" action="/api/login">
+            <div class="form-group">
+               <label class="form-label" for="usuario">Usuário</label>
+               <input type="password" id="usuario" name="usuario" placeholder="Usuário" required>
+            </div>
+            <div class="form-group">
+               <label class="form-label" for="password">Senha</label>
+               <input type="password" id="password" name="senha" placeholder="Senha" required>
+            </div>
+            <div class="register-link">
+               Não tem conta? <a href="/api/register">Registre-se</a>
+            </div>
+            <button type="submit" class="btn btn-fill btn-large centered">Login</button>
+         </form>
+      </div>
+   </main>
 
-	<footer class="footer">
-		<div class="footer-container">
-			<nav class="footer-nav">
-				<div class="footer-description">
-					<h3 class="footer-description-title">Hotéis Estrela</h3>
-					<p>Hospitalidade e Conforto são nossas palavras de ordem</p>
-				</div>
-				<div class="footer-contact-us">
-					<h3 class="footer-description-title">Contate-nos</h3>
-					<p class="footer-description-detail"> 
-						<img src="./assets/img/map-pin.svg" class="footer-description-icon" alt="Localização dos Hotéis Estrela">
-
-						<span>23, Fola Osibo, Lekki Phase 1</span></p>
-					<p class="footer-description-detail">
-						<img src="./assets/img/phone.svg" class="footer-description-icon" alt="Número de telefone dos Hotéis Estrela"> 
-						<span>
-					 08185956620</span></p>
-					<p class="footer-description-detail">
-						<img src="./assets/img/mail.svg" class="footer-description-icon" alt="E-mail dos Hotéis Estrela">
-						<span>support@starhotels.com</span> </p>
-				</div>
-				<div class="footer-follow-us">
-					<h3 class="footer-description-title">Siga-nos</h3>
-					<ul class="footer-follow-us-lists">
-						<li class="follow-us-list">
-							<a href="">
-								<img src="./assets/img/facebook.svg" alt="Página do Facebook dos Hotéis Estrela">
-							</a>
-						</li>
-						<li class="follow-us-list">
-							<a href="">
-								<img src="./assets/img/twitter.svg" alt="Página do Twitter dos Hotéis Estrela">
-							</a>
-						</li>
-						<li class="follow-us-list">
-							<a href="">
-								<img src="./assets/img/instagram.svg" alt="Página do Instagram dos Hotéis Estrela">
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</footer>
-	<script defer async>
-		(() => {
-			const loader = document.getElementById('loader');
-			const scrollBar = document.getElementsByClassName('scroll-bar')[0];
-			window.addEventListener('load', () => {
-				loader.classList.add('none');
-				scrollBar.classList.remove('scroll-bar')
-			});
-		})();
-	</script>
-	<script  defer async src="assets/js/toggleHamburger.js"></script>
+   <footer class="footer">
+      <div class="footer-container">
+         <nav class="footer-nav">
+            <div class="footer-description">
+               <h3 class="footer-description-title">Hotéis Estrela</h3>
+               <p>Hospitalidade e Conforto são nossas palavras de ordem</p>
+            </div>
+            <div class="footer-contact-us">
+               <h3 class="footer-description-title">Contate-nos</h3>
+               <p class="footer-description-detail">
+                  <img src="/assets/img/map-pin.svg" class="footer-description-icon" alt="Localização dos Hotéis Estrela">
+                  <span>23, Fola Osibo, Lekki Phase 1</span>
+               </p>
+               <p class="footer-description-detail">
+                  <img src="/assets/img/phone.svg" class="footer-description-icon" alt="Número de telefone dos Hotéis Estrela">
+                  <span>08185956620</span>
+               </p>
+               <p class="footer-description-detail">
+                  <img src="/assets/img/mail.svg" class="footer-description-icon" alt="E-mail dos Hotéis Estrela">
+                  <span>support@starhotels.com</span>
+               </p>
+            </div>
+            <div class="footer-follow-us">
+               <h3 class="footer-description-title">Siga-nos</h3>
+               <ul class="footer-follow-us-lists">
+                  <li class="follow-us-list">
+                     <a href="">
+                        <img src="/assets/img/facebook.svg" alt="Página do Facebook dos Hotéis Estrela">
+                     </a>
+                  </li>
+                  <li class="follow-us-list">
+                     <a href="">
+                        <img src="/assets/img/twitter.svg" alt="Página do Twitter dos Hotéis Estrela">
+                     </a>
+                  </li>
+                  <li class="follow-us-list">
+                     <a href="">
+                        <img src="/assets/img/instagram.svg" alt="Página do Instagram dos Hotéis Estrela">
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+   </footer>
+   <script defer async>
+      (() => {
+         const loader = document.getElementById('loader');
+         const scrollBar = document.getElementsByClassName('scroll-bar')[0];
+         window.addEventListener('load', () => {
+            loader.classList.add('none');
+            scrollBar.classList.remove('scroll-bar');
+         });
+      })();
+   </script>
+   <script defer async src="assets/js/toggleHamburger.js"></script>
 </body>
 </html>
