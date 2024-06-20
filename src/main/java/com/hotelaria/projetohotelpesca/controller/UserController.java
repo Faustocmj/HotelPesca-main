@@ -28,7 +28,7 @@ public class UserController {
                         @RequestParam("senha") String senha, Model model) {
 
         if (userService.authenticate(usuario, senha)) {
-            return "index"; // Redireciona para index.html
+            return "redirect:/api/usuarios";
         } else {
             model.addAttribute("status", "error");
             model.addAttribute("message", "Login incorreto");
@@ -49,7 +49,7 @@ public class UserController {
             model.addAttribute("status", "success");
             model.addAttribute("message", "Registro efetuado com sucesso");
             model.addAttribute("userId", newUser.getCodUsuario().toString());
-            return "index"; // Redirecionar para uma página de sucesso ou outro endpoint
+            return "redirect:/"; // Redirecionar para uma página de sucesso ou outro endpoint
         } catch (Exception e) {
             model.addAttribute("status", "error");
             model.addAttribute("message", "Erro ao registrar usuário: " + e.getMessage());
@@ -92,5 +92,12 @@ public class UserController {
             redirectAttributes.addFlashAttribute("errorMessage", "Erro ao atualizar usuário: " + e.getMessage());
         }
         return "redirect:/api/usuarios"; // Redireciona para a página de edição do usuário
+    }
+
+    @GetMapping("/usuarios/pesquisar")
+    public String pesquisarUsuarios(@RequestParam("keyword") String keyword, Model model) {
+        List<Usuario> usuarios = userService.pesquisarUsuarios(keyword);
+        model.addAttribute("usuarios", usuarios);
+        return "painel"; // Substitua pelo nome da sua página de lista de usuários
     }
 }

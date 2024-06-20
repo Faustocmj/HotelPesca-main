@@ -33,12 +33,16 @@ public class UsuarioService {
         }
         usuarioRepository.deleteById(id);
     }
-//por hora deixar depois remover
+
+    public List<Usuario> pesquisarUsuarios(String keyword) {
+        return usuarioRepository.findByNomeContainingOrCpfContaining(keyword, keyword);
+    }
+
     public boolean authenticate(String codusuario, String senha) {
         Usuario usuario = usuarioRepository.findByUsuario(codusuario);
         return usuario!= null && usuario.getSenha().equals(senha);
     }
-//ate aqui
+
 
     public Usuario update(Long id, Usuario usuarioDetails) {
         Usuario usuario = usuarioRepository.findById(id)

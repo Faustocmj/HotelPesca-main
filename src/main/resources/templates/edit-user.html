@@ -13,6 +13,7 @@
 
     <div class="container">
         <form th:object="${usuario}" th:action="@{/api/usuarios/{id}/editar(id=${usuario.codUsuario})}" method="post">
+
             <input type="hidden" th:field="*{codUsuario}">
             <div>
                 <label for="nome">Nome:</label>

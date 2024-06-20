@@ -4,73 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Administração - Lista de Usuários</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .user-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .user-item {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .user-item:last-child {
-            border-bottom: none;
-        }
-
-        .user-details {
-            flex: 1;
-        }
-
-        .user-actions {
-            text-align: right;
-        }
-
-        .btn {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/painel.css"> <!-- Link para o CSS principal -->
+    <link rel="stylesheet" href="/assets/css/editar.css"> <!-- Link para o CSS da barra de pesquisa -->
 </head>
 <body>
     <header class="header">
@@ -79,6 +14,12 @@
 
     <div class="container">
         <h2>Lista de Usuários Cadastrados</h2>
+
+        <form class="search-form" th:action="@{/api/usuarios/pesquisar}" method="get">
+            <input type="text" name="keyword" placeholder="Pesquisar usuário por nome">
+            <button type="submit" class="btn">Pesquisar</button>
+        </form>
+
         <ul class="user-list">
             <li class="user-item" th:each="usuario : ${usuarios}">
                 <div class="user-details">
@@ -95,7 +36,7 @@
         </ul>
     </div>
 
-    <footer style="text-align: center; padding: 20px; background-color: #333; color: #fff; position: fixed; bottom: 0; width: 100%;">
+    <footer class="footer">
         &copy; 2024 Seu Nome
     </footer>
 </body>

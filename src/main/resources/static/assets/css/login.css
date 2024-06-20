@@ -1,3 +1,4 @@
+/* Container do formulário */
 .login-container {
     text-align: center;
     margin-top: 50px;
@@ -9,12 +10,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Título do formulário */
 .login-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 2rem;
 }
 
+/* Formulário */
 .login-form {
     max-width: 300px;
     margin: 0 auto;
@@ -22,24 +25,31 @@
     flex-direction: column;
 }
 
+/* Grupos de formulário */
 .form-group {
     margin-bottom: 20px;
 }
 
+/* Labels */
 .form-label {
     font-size: 16px;
     display: block;
     margin-bottom: 5px;
 }
 
+/* Estilos para todos os tipos de input */
 input[type="text"],
+input[type="date"],
+input[type="tel"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
+/* Botão */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -58,17 +68,20 @@ input[type="password"] {
     background-color: #0056b3;
 }
 
+/* Centralizar elementos */
 .centered {
     display: block;
     margin: 0 auto;
 }
 
+/* Link de registro */
 .register-link {
     text-align: center;
     margin: 20px 0; /* Aumentado para espaçar mais do botão de login */
     font-size: 1rem;
 }
 
+/* Link de registro */
 .register-link a {
     color: #007bff;
     text-decoration: none;

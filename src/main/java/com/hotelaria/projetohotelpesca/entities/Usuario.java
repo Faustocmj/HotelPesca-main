@@ -158,20 +158,4 @@ public class Usuario implements Serializable {
     public int hashCode() {
         return Objects.hashCode(getCodUsuario());
     }
-
-    // Está imprimindo a senha, por hora deixarei assim
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append(", nome='").append(nome).append('\'');
-        sb.append(", cpf='").append(cpf).append('\'');
-        sb.append(", rg='").append(rg).append('\'');
-        sb.append(", endereco='").append(endereco).append('\'');
-        sb.append(", telefone='").append(telefone).append('\'');
-        sb.append(", celular='").append(celular).append('\'');
-        sb.append(", dataNascimento=").append(dataNascimento);
-        sb.append(", usuario='").append(usuario).append('\'');
-        sb.append(", senha='").append(senha).append('\'');
-        return sb.toString();
-    }
 }
