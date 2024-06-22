@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Usuario findByUsuario(String usuario);
     List<Usuario> findByNomeContainingOrCpfContaining(String nome, String cpf);
+    boolean existsByUsuario(String usuario);
 }

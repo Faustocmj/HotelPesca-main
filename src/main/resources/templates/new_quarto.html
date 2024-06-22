@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração - Cadastrar Novo Quarto</title>
+    <link rel="stylesheet" href="assets/css/quartos.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Painel de Administração - Cadastrar Novo Quarto</h1>
+    </header>
+
+    <div class="container">
+        <h2>Cadastrar Novo Quarto</h2>
+        <form th:action="@{/quartos}" th:object="${quarto}" method="post">
+            <div>
+                <label for="numQuarto">Número do Quarto:</label>
+                <input type="number" id="numQuarto" th:field="*{numQuarto}" required/>
+            </div>
+            <div>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" th:field="*{categoria}">
+                    <option th:each="categoria : ${categorias}"
+                            th:value="${categoria.name()}"
+                            th:text="${categoria}">Categoria</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn">Salvar</button>
+            </div>
+        </form>
+        <div class="back-link">
+            <a th:href="@{/quartos}" class="btn">Voltar</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Star Hotel
+    </footer>
+</body>
+</html>

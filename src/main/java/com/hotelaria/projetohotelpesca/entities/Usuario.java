@@ -39,7 +39,7 @@ public class Usuario implements Serializable {
     @Column(name = "Celular")
     private String celular;
 
-    @Column(name = "Usuario")
+    @Column(name = "Usuario", unique = true)
     private String usuario;
 
     @Column(name = "Senha")

@@ -27,10 +27,10 @@ public class Cliente extends Usuario implements Serializable {
 
     public Cliente() {}
 
-    public Cliente(String nome, String cpf, String rg, String endereco,
+    public Cliente(Long codUsuario, String nome, String cpf, String rg, String endereco,
                    String telefone, String celular, String usuario, String senha,
                    LocalDate dataNascimento, String email) {
-        super(null, nome, cpf, rg, endereco, telefone, celular, usuario, senha, dataNascimento);
+        super(codUsuario, nome, cpf, rg, endereco, telefone, celular, usuario, senha, dataNascimento);
         this.email = email;
     }
 

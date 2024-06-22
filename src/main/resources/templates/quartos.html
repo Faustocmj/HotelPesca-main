@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração - Lista de Quartos</title>
+    <link rel="stylesheet" href="assets/css/quartos.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Painel de Administração - Lista de Quartos</h1>
+    </header>
+
+    <div class="container">
+        <h2>Lista de Quartos Cadastrados</h2>
+        <a href="/quartos/new" class="btn">Cadastrar Novo Quarto</a>
+
+        <ul class="quarto-list">
+            <li class="quarto-item" th:each="quarto : ${quartos}">
+                <div class="quarto-details">
+                    <strong>Número do Quarto: </strong><span th:text="${quarto.numQuarto}"></span><br>
+                    <strong>Categoria: </strong><span th:text="${quarto.categoria}"></span>
+                </div>
+                <div class="quarto-actions">
+                    <a th:href="@{/quartos/edit/{id}(id=${quarto.numQuarto})}" class="btn">Editar</a>
+                    <a th:href="@{/quartos/delete/{id}(id=${quarto.numQuarto})}"
+                       class="btn"
+                       onclick="return confirm('Tem certeza que deseja deletar este quarto?')">Excluir</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Star Hotel
+    </footer>
+</body>
+</html>

@@ -23,11 +23,11 @@ public class Solicitacao implements Serializable {
     @Column(name = "CodSolicitacao")
     private Integer codSolicitacao;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "Cliente_cod")
     private Cliente cliente;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "Colaborador_cod")
     private Colaborador colaborador;
 

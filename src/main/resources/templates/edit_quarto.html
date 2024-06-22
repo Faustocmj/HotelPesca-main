@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Quarto</title>
+    <link rel="stylesheet" href="/assets/css/painel.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Editar Quarto</h1>
+    </header>
+
+    <div class="container">
+        <form th:object="${quarto}" th:action="@{/quartos/edit/{numQuarto}(numQuarto=${quarto.numQuarto})}" method="post">
+
+            <input type="hidden" th:field="*{numQuarto}">
+            <div>
+                <label for="numQuarto">Número do Quarto:</label>
+                <input type="text" id="numQuarto" th:field="*{numQuarto}" readonly>
+            </div>
+            <div>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" th:field="*{categoria}">
+                    <option th:each="categoria : ${categorias}" th:value="${categoria}" th:text="${categoria}"></option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn">Salvar</button>
+                <a th:href="@{/quartos}" class="btn">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Star Hotel
+    </footer>
+</body>
+</html>

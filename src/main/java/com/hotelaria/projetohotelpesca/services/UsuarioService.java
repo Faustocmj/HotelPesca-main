@@ -24,6 +24,10 @@ public class UsuarioService {
     }
 
     public Usuario save(Usuario usuario) {
+        // Verificar se o usuário já existe pelo campo 'usuario'
+        if (usuarioRepository.existsByUsuario(usuario.getUsuario())) {
+            return null; // Retornar null para indicar que o usuário já existe
+        }
         return usuarioRepository.save(usuario);
     }
 

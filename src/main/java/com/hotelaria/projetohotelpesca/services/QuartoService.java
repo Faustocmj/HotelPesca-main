@@ -22,4 +22,12 @@ public class QuartoService {
         Optional<Quarto> obj = quartoRepository.findById(Cod);
         return obj.get();
     }
+
+    public Quarto saveQuarto(Quarto quarto) {
+        return quartoRepository.save(quarto);
+    }
+
+    public void deleteQuarto(Integer id) {
+        quartoRepository.deleteById(id);
+    }
 }

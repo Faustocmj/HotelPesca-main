@@ -30,21 +30,21 @@ public class Colaborador extends Usuario implements Serializable {
 
     public Colaborador() {}
 
-    public Colaborador(String nome, String cpf, String rg, String endereco, String telefone,
+    public Colaborador(Long codUsuario, String nome, String cpf, String rg, String endereco, String telefone,
                        String celular, String usuario, String senha, LocalDate dataNascimento, String cargo,
                        Integer nivelAcesso) {
-        super(null, nome, cpf, rg, endereco, telefone, celular, usuario, senha, dataNascimento);
+        super(codUsuario, nome, cpf, rg, endereco, telefone, celular, usuario, senha, dataNascimento);
         this.cargo = cargo;
         this.nivelAcesso = nivelAcesso;
     }
 
-    public Colaborador(Usuario usuario, String cargo, Integer nivelAcesso) {
-        super(usuario.getCodUsuario(), usuario.getNome(), usuario.getCpf(), usuario.getRg(), usuario.getEndereco(),
-                usuario.getTelefone(), usuario.getCelular(), usuario.getUsuario(),
-                usuario.getSenha(), usuario.getDataNascimento());
-        this.cargo = cargo;
-        this.nivelAcesso = nivelAcesso;
-    }
+    // public Colaborador(Usuario usuario, String cargo, Integer nivelAcesso) {
+    //     super(usuario.getCodUsuario(), usuario.getNome(), usuario.getCpf(), usuario.getRg(), usuario.getEndereco(),
+    //             usuario.getTelefone(), usuario.getCelular(), usuario.getUsuario(),
+    //             usuario.getSenha(), usuario.getDataNascimento());
+    //     this.cargo = cargo;
+    //     this.nivelAcesso = nivelAcesso;
+    // }
 
     public String getCargo() {
         return cargo;

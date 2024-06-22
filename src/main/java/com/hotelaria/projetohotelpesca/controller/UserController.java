@@ -1,11 +1,13 @@
 package com.hotelaria.projetohotelpesca.controller;
 
 import com.hotelaria.projetohotelpesca.entities.Usuario;
+import com.hotelaria.projetohotelpesca.exceptions.ResourceNotFoundException;
 import com.hotelaria.projetohotelpesca.services.UsuarioService;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -42,18 +44,23 @@ public class UserController {
     }
 
 
-    @PostMapping("/register")
+    @PostMapping(value = "/register", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public String register(@ModelAttribute Usuario usuario, Model model) {
         try {
             Usuario newUser = userService.save(usuario);
+            if (newUser == null) {
+                model.addAttribute("status", "error");
+                model.addAttribute("message", "Usuário já existe.");
+                return "register";
+            }
             model.addAttribute("status", "success");
             model.addAttribute("message", "Registro efetuado com sucesso");
             model.addAttribute("userId", newUser.getCodUsuario().toString());
-            return "redirect:/"; // Redirecionar para uma página de sucesso ou outro endpoint
+            return "redirect:/";
         } catch (Exception e) {
             model.addAttribute("status", "error");
             model.addAttribute("message", "Erro ao registrar usuário: " + e.getMessage());
-            return "register"; // Voltar à página de registro com a mensagem de erro
+            return "register";
         }
     }
 
@@ -77,27 +84,23 @@ public class UserController {
         return "edit-user";
     }
 
-    @PostMapping("/usuarios/{id}/editar") // Mudança aqui para POST
-    public String atualizarUsuario(@PathVariable Long id, @ModelAttribute Usuario usuario, RedirectAttributes redirectAttributes) {
+    @PostMapping("/usuarios/{id}/editar")
+    public String editarUsuario(@PathVariable Long id, @ModelAttribute Usuario usuario, RedirectAttributes redirectAttributes) {
         try {
-            Usuario existingUser = userService.findById(id);
-            if (existingUser != null) {
-                usuario.setCodUsuario(id); // Garantindo que o ID seja o mesmo do usuário existente
-                userService.save(usuario); // Salva as atualizações
-                redirectAttributes.addFlashAttribute("successMessage", "Usuário atualizado com sucesso");
-            } else {
-                redirectAttributes.addFlashAttribute("errorMessage", "Usuário não encontrado com o ID: " + id);
-            }
+            userService.update(id, usuario);
+            redirectAttributes.addFlashAttribute("successMessage", "Usuário atualizado com sucesso");
+        } catch (ResourceNotFoundException e) {
+            redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("errorMessage", "Erro ao atualizar usuário: " + e.getMessage());
         }
-        return "redirect:/api/usuarios"; // Redireciona para a página de edição do usuário
+        return "redirect:/api/usuarios";
     }
 
     @GetMapping("/usuarios/pesquisar")
     public String pesquisarUsuarios(@RequestParam("keyword") String keyword, Model model) {
         List<Usuario> usuarios = userService.pesquisarUsuarios(keyword);
         model.addAttribute("usuarios", usuarios);
-        return "painel"; // Substitua pelo nome da sua página de lista de usuários
+        return "painel";
     }
 }

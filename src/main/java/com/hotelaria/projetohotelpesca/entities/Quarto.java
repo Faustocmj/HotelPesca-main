@@ -24,9 +24,9 @@ public class Quarto implements Serializable {
     @Column(name = "Categoria")
     private Integer categoria;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "quartos")
-    private List<Reserva> reservas = new ArrayList<>();
+    // @JsonIgnore
+    // @ManyToMany(mappedBy = "quartos")
+    // private List<Reserva> reservas = new ArrayList<>();
 
     public Quarto() {}
 
