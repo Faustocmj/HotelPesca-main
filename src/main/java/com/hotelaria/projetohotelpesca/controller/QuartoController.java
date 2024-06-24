@@ -2,6 +2,7 @@ package com.hotelaria.projetohotelpesca.controller;
 
 import com.hotelaria.projetohotelpesca.entities.Quarto;
 import com.hotelaria.projetohotelpesca.enums.CategoriaQuarto;
+import com.hotelaria.projetohotelpesca.enums.Disponibilidade;
 import com.hotelaria.projetohotelpesca.services.QuartoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,8 @@ public class QuartoController {
     }
 
     @PostMapping
-    public String createQuarto(@ModelAttribute Quarto quarto) {
+    public String saveQuarto(@ModelAttribute Quarto quarto) {
+        quarto.setDisponibilidade(Disponibilidade.DISPONIVEL); // Definindo a disponibilidade como DISPONIVEL por padrão
         quartoService.saveQuarto(quarto);
         return "redirect:/quartos";
     }
@@ -42,6 +44,7 @@ public class QuartoController {
         Quarto quarto = quartoService.buscarPorCod(id);
         model.addAttribute("quarto", quarto);
         model.addAttribute("categorias", CategoriaQuarto.values());
+        model.addAttribute("disponibilidades", Disponibilidade.values());
         return "edit_quarto";
     }
 
