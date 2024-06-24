@@ -1,13 +1,13 @@
 package com.hotelaria.projetohotelpesca.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hotelaria.projetohotelpesca.enums.CategoriaQuarto;
+import com.hotelaria.projetohotelpesca.enums.Disponibilidade;
+import com.hotelaria.projetohotelpesca.converters.CategoriaQuartoConverter;
+import com.hotelaria.projetohotelpesca.converters.DisponibilidadeConverter;
 import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -21,8 +21,13 @@ public class Quarto implements Serializable {
     @Column(name = "NumQuarto")
     private Integer numQuarto;
 
+    @Convert(converter = CategoriaQuartoConverter.class)
     @Column(name = "Categoria")
-    private Integer categoria;
+    private CategoriaQuarto categoria;
+
+    @Convert(converter = DisponibilidadeConverter.class)
+    @Column(name = "Disponibilidade")
+    private Disponibilidade disponibilidade;
 
     // @JsonIgnore
     // @ManyToMany(mappedBy = "quartos")
@@ -30,9 +35,10 @@ public class Quarto implements Serializable {
 
     public Quarto() {}
 
-    public Quarto(Integer numQuarto, CategoriaQuarto categoria) {
+    public Quarto(Integer numQuarto, CategoriaQuarto categoria, Disponibilidade disponibilidade) {
         this.numQuarto = numQuarto;
-        this.setCategoria(categoria);
+        this.categoria = categoria;
+        this.disponibilidade = disponibilidade;
     }
 
     public Integer getNumQuarto() {
@@ -44,11 +50,19 @@ public class Quarto implements Serializable {
     }
 
     public CategoriaQuarto getCategoria() {
-        return CategoriaQuarto.valueOf(categoria);
+        return categoria;
     }
 
     public void setCategoria(CategoriaQuarto categoria) {
-        this.categoria = categoria.getCodigo();
+        this.categoria = categoria;
+    }
+
+    public Disponibilidade getDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(Disponibilidade disponibilidade) {
+        this.disponibilidade = disponibilidade;
     }
 
     @Override

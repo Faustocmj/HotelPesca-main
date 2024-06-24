@@ -26,6 +26,12 @@
                 </select>
             </div>
             <div>
+                <label for="disponibilidade">Disponibilidade:</label>
+                <select id="disponibilidade" th:field="*{disponibilidade}">
+                    <option th:each="disp : ${disponibilidades}" th:value="${disp}" th:text="${disp}"></option>
+                </select>
+            </div>
+            <div>
                 <button type="submit" class="btn">Salvar</button>
                 <a th:href="@{/quartos}" class="btn">Cancelar</a>
             </div>

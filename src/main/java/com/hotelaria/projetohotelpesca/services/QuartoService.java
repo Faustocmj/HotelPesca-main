@@ -23,10 +23,10 @@ public class QuartoService {
         return obj.get();
     }
 
-    public Quarto saveQuarto(Quarto quarto) {
-        return quartoRepository.save(quarto);
+    public void saveQuarto(Quarto quarto) {
+        quartoRepository.save(quarto);
     }
-
+    
     public void deleteQuarto(Integer id) {
         quartoRepository.deleteById(id);
     }

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Administração - Cadastrar Novo Quarto</title>
-    <link rel="stylesheet" href="assets/css/quartos.css">
+    <link rel="stylesheet" href="/assets/css/painel.css">
+    <link rel="stylesheet" href="/assets/css/editar.css">
 </head>
 <body>
     <header class="header">
@@ -21,18 +22,14 @@
             <div>
                 <label for="categoria">Categoria:</label>
                 <select id="categoria" th:field="*{categoria}">
-                    <option th:each="categoria : ${categorias}"
-                            th:value="${categoria.name()}"
-                            th:text="${categoria}">Categoria</option>
-                </select>
-            </div>
+                    <option th:each="categoria : ${categorias}" th:value="${categoria}" th:text="${categoria}"></option>
+                </select>                
+            </div>           
             <div>
                 <button type="submit" class="btn">Salvar</button>
+                <a th:href="@{/quartos}" class="btn">Voltar</a>
             </div>
         </form>
-        <div class="back-link">
-            <a th:href="@{/quartos}" class="btn">Voltar</a>
-        </div>
     </div>
 
     <footer class="footer">
