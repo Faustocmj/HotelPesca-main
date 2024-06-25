@@ -60,4 +60,30 @@ public class QuartoController {
         quartoService.deleteQuarto(id);
         return "redirect:/quartos";
     }
+
+    // @GetMapping("/solicitacoes")
+    // public String listarSolicitacoes(Model model) {
+    //     List<Solicitacao> solicitacoes = SolicitacaoService.listarTodas();
+    //     model.addAttribute("solicitacoes", solicitacoes);
+    //     return "listar_solicitacoes";
+    // }
+
+    // @GetMapping("/solicitacoes/quartos-disponiveis")
+    // public String listarQuartosDisponiveis(Model model) {
+    // List<Quarto> quartosDisponiveis = quartoService.buscarPorDisponibilidade(Disponibilidade.DISPONIVEL);
+    // model.addAttribute("quartosDisponiveis", quartosDisponiveis);
+    // return "quartos_disponiveis";
+    // }
+
+    // @PostMapping("/solicitacoes/reservar/{numQuarto}")
+    // public String reservarQuarto(@PathVariable Integer numQuarto, @ModelAttribute Solicitacao solicitacao) {
+    // Quarto quarto = quartoService.buscarPorCod(numQuarto);
+    // quarto.setDisponibilidade(Disponibilidade.INDISPONIVEL);
+    // quartoService.saveQuarto(quarto);
+
+    // solicitacao.setStatus(Status.ABERTO);
+    // SolicitacaoService.save(solicitacao);
+
+    // return "redirect:/solicitacoes";
+    // }
 }

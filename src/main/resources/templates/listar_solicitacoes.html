@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Solicitações</title>
+    <link rel="stylesheet" href="/assets/css/painel.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Lista de Solicitações</h1>
+    </header>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Colaborador</th>
+                    <th>Data de Criação</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="solicitacao : ${solicitacoes}">
+                    <td th:text="${solicitacao.codSolicitacao}">ID</td>
+                    <td th:text="${solicitacao.clienteNome}">Cliente</td>
+                    <td th:text="${solicitacao.colaboradorNome}">Colaborador</td>
+                    <td th:text="${solicitacao.dataCriacao}">Data de Criação</td>
+                    <td th:text="${solicitacao.status}">Status</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="footer">
+        &copy; 2024 Star Hotel
+    </footer>
+</body>
+</html>

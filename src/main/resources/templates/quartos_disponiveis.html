@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quartos Disponíveis</title>
+    <link rel="stylesheet" href="/assets/css/painel.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Quartos Disponíveis</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Número do Quarto</th>
+                    <th>Categoria</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="quarto : ${quartosDisponiveis}">
+                    <td th:text="${quarto.numQuarto}">Número do Quarto</td>
+                    <td th:text="${quarto.categoria}">Categoria</td>
+                    <td>
+                        <form th:action="@{/solicitacoes/reservar/{numQuarto}(numQuarto=${quarto.numQuarto})}" method="post">
+                            <button type="submit">Reservar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Star Hotel
+    </footer>
+</body>
+</html>

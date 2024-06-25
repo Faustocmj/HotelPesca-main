@@ -32,8 +32,8 @@ public class Solicitacao implements Serializable {
     private Colaborador colaborador;
 
     @Column(name = "DataCriacao")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy'T'HH:mm:ss")
-    private LocalDateTime dataCriacao = LocalDateTime.now();
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+    private LocalDateTime dataCriacao = LocalDateTime.now();    
 
     @Column(name = "Status")
     private Integer status = 1;
