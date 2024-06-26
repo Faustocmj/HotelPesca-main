@@ -1,14 +1,19 @@
 package com.hotelaria.projetohotelpesca.controller;
 
+import com.hotelaria.projetohotelpesca.entities.Cliente;
+import com.hotelaria.projetohotelpesca.entities.Colaborador;
 import com.hotelaria.projetohotelpesca.entities.Quarto;
+import com.hotelaria.projetohotelpesca.entities.Solicitacao;
 import com.hotelaria.projetohotelpesca.enums.CategoriaQuarto;
 import com.hotelaria.projetohotelpesca.enums.Disponibilidade;
+import com.hotelaria.projetohotelpesca.enums.Status;
 import com.hotelaria.projetohotelpesca.services.QuartoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -61,29 +66,35 @@ public class QuartoController {
         return "redirect:/quartos";
     }
 
-    // @GetMapping("/solicitacoes")
-    // public String listarSolicitacoes(Model model) {
-    //     List<Solicitacao> solicitacoes = SolicitacaoService.listarTodas();
-    //     model.addAttribute("solicitacoes", solicitacoes);
-    //     return "listar_solicitacoes";
-    // }
+    @GetMapping("/quartos-disponiveis")
+    public String listarQuartosDisponiveis(Model model) {
+        List<Quarto> quartosDisponiveis = quartoService.buscarPorDisponibilidade(Disponibilidade.DISPONIVEL);
+        model.addAttribute("quartos", quartosDisponiveis);
+        return "listar_quartos_disponiveis";
+    }
 
-    // @GetMapping("/solicitacoes/quartos-disponiveis")
-    // public String listarQuartosDisponiveis(Model model) {
-    // List<Quarto> quartosDisponiveis = quartoService.buscarPorDisponibilidade(Disponibilidade.DISPONIVEL);
-    // model.addAttribute("quartosDisponiveis", quartosDisponiveis);
-    // return "quartos_disponiveis";
-    // }
+    // @PostMapping("/reservar-quarto")
+    // public String reservarQuarto(@RequestParam Integer numQuarto, @RequestParam Integer clienteId, @RequestParam Integer colaboradorId, Model model) {
+    //     Quarto quarto = quartoService.buscarPorCod(numQuarto);
+    //     if (quarto != null && quarto.getDisponibilidade() == Disponibilidade.DISPONIVEL) {
+    //         quarto.setDisponibilidade(Disponibilidade.INDISPONIVEL);
+    //         quartoService.saveQuarto(quarto);
 
-    // @PostMapping("/solicitacoes/reservar/{numQuarto}")
-    // public String reservarQuarto(@PathVariable Integer numQuarto, @ModelAttribute Solicitacao solicitacao) {
-    // Quarto quarto = quartoService.buscarPorCod(numQuarto);
-    // quarto.setDisponibilidade(Disponibilidade.INDISPONIVEL);
-    // quartoService.saveQuarto(quarto);
+    //         Cliente cliente = clienteService.buscarPorCod(clienteId).orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+    //         Colaborador colaborador = colaboradorService.buscarPorCod(colaboradorId).orElseThrow(() -> new RuntimeException("Colaborador não encontrado"));
 
-    // solicitacao.setStatus(Status.ABERTO);
-    // SolicitacaoService.save(solicitacao);
+    //         Solicitacao solicitacao = new Solicitacao();
+    //         solicitacao.setCliente(cliente);
+    //         solicitacao.setColaborador(colaborador);
+    //         solicitacao.setDataCriacao(LocalDateTime.now());
+    //         solicitacao.setStatus(Status.ABERTO);
+    //         solicitacaoService.save(solicitacao);
 
-    // return "redirect:/solicitacoes";
+    //         model.addAttribute("mensagem", "Reserva realizada com sucesso! Consulte novamente mais tarde para saber se a solicitação foi aprovada.");
+    //         return "confirmacao_reserva";
+    //     }
+
+    //     model.addAttribute("mensagem", "Não foi possível realizar a reserva. O quarto não está disponível.");
+    //     return "confirmacao_reserva";
     // }
 }

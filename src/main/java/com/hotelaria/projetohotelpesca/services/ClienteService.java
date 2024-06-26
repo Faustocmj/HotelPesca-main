@@ -22,4 +22,8 @@ public class ClienteService {
         Optional<Cliente> obj = clienteRepository.findById(Cod);
         return obj.get();
     }
+
+    public Cliente adicionar(Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
 }
