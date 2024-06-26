@@ -64,4 +64,8 @@ public class UsuarioService {
 
         return usuarioRepository.save(usuario);
     }
+
+    public Usuario findByUsuario(String usuario) {
+        return usuarioRepository.findByUsuario(usuario);
+    }
 }

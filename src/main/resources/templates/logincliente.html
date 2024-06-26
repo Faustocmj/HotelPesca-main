@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Cliente</title>
     <style>
         /* Estilos para a página de login */
         body {
@@ -59,8 +59,8 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
-        <form th:action="@{/login}" method="post">
+        <h1>Login Cliente</h1>
+        <form th:action="@{/loginCliente}" method="post">
             <div th:if="${status == 'error'}" class="error" th:text="${message}"></div>
             <label for="usuario">Usuário:</label>
             <input type="text" id="usuario" name="usuario" required>

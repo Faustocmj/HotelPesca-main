@@ -20,22 +20,9 @@ public class UserController {
     @Autowired
     private UsuarioService userService;
 
-    @GetMapping("/login")
+    @GetMapping("/login/cliente")
     public String home(){
         return "login";
-    }
-
-    @PostMapping("/login")
-    public String login(@RequestParam("usuario") String usuario,
-                        @RequestParam("senha") String senha, Model model) {
-
-        if (userService.authenticate(usuario, senha)) {
-            return "redirect:/api/usuarios";
-        } else {
-            model.addAttribute("status", "error");
-            model.addAttribute("message", "Login incorreto");
-            return "login"; // Retorna para a página de login com a mensagem de erro
-        }
     }
 
     @GetMapping("/register")

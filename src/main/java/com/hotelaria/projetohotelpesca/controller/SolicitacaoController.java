@@ -51,29 +51,28 @@ public class SolicitacaoController {
                 .collect(Collectors.toList());
         model.addAttribute("solicitacoes", solicitacaoDTOs);
         return "listar_solicitacoes";
-    }
+ 
 
+    // @PostMapping("/reservar/{numQuarto}")
+    // public String reservarQuarto(@PathVariable Integer numQuarto, @RequestParam Integer clienteId, @RequestParam Integer colaboradorId) {
+    //     try {
+    //         Quarto quarto = quartoService.buscarPorCod(numQuarto);
+    //         if (quarto.getDisponibilidade() == Disponibilidade.DISPONIVEL) {
+    //             quarto.setDisponibilidade(Disponibilidade.INDISPONIVEL);
+    //             quartoService.saveQuarto(quarto);
 
-    @PostMapping("/reservar/{numQuarto}")
-    public String reservarQuarto(@PathVariable Integer numQuarto, @RequestParam Integer clienteId, @RequestParam Integer colaboradorId) {
-        try {
-            Quarto quarto = quartoService.buscarPorCod(numQuarto);
-            if (quarto.getDisponibilidade() == Disponibilidade.DISPONIVEL) {
-                quarto.setDisponibilidade(Disponibilidade.INDISPONIVEL);
-                quartoService.saveQuarto(quarto);
-
-                Cliente cliente = clienteService.buscarPorCod(clienteId);
-                Colaborador colaborador = colaboradorService.buscarPorCod(colaboradorId);
-                Solicitacao solicitacao = new Solicitacao();
-                solicitacao.setCliente(cliente);
-                solicitacao.setColaborador(colaborador);
-                solicitacao.setStatus(Status.ABERTO);
-                solicitacaoService.save(solicitacao);
-            }
-        } catch (Exception e) {
-            // Trate a exceção conforme necessário
-            e.printStackTrace();
-        }
-        return "redirect:/solicitacoes";
+    //             Cliente cliente = clienteService.buscarPorCod(clienteId);
+    //             Colaborador colaborador = colaboradorService.buscarPorCod(colaboradorId);
+    //             Solicitacao solicitacao = new Solicitacao();
+    //             solicitacao.setCliente(cliente);
+    //             solicitacao.setColaborador(colaborador);
+    //             solicitacao.setStatus(Status.ABERTO);
+    //             solicitacaoService.save(solicitacao);
+    //         }
+    //     } catch (Exception e) {
+    //         // Trate a exceção conforme necessário
+    //         e.printStackTrace();
+    //     }
+    //     return "redirect:/solicitacoes";
     }
 }
