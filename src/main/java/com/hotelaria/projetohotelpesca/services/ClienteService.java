@@ -12,13 +12,13 @@ import java.util.Optional;
 public class ClienteService {
 
     @Autowired
-    private static ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository;
 
     public List<Cliente> buscarTodos() {
         return clienteRepository.findAll();
     }
 
-    public static Cliente buscarPorCod(Integer Cod) {
+    public Cliente buscarPorCod(Integer Cod) {
         Optional<Cliente> obj = clienteRepository.findById(Cod);
         return obj.get();
     }

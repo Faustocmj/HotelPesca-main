@@ -70,12 +70,10 @@ public class QuartoController {
     }
 
     @GetMapping("/quartos-disponiveis")
-    public String listarQuartosDisponiveis(Model model) {
+    public String listarQuartosDisponiveis(Model model, @RequestParam Integer clienteId) {
         List<Quarto> quartosDisponiveis = quartoService.buscarPorDisponibilidade(Disponibilidade.DISPONIVEL);
-        if (quartosDisponiveis == null) {
-            quartosDisponiveis = new ArrayList<>();
-        }
         model.addAttribute("quartosDisponiveis", quartosDisponiveis);
+        model.addAttribute("clienteId", clienteId);
         return "listar_quartos_disponiveis";
     }
 
@@ -89,7 +87,7 @@ public class QuartoController {
     //         solicitacao.setColaborador(null);  // Deixe o colaborador como nulo
     //         solicitacao.setStatus(Status.ABERTO);
 
-    //         solicitacaoService.save(solicitacao);
+    //         solicitacaoService.save(solicitacao); 
 
     //         // Atualize a disponibilidade do quarto para INDISPONIVEL
     //         Quarto quarto = quartoService.buscarPorCod(numQuarto);

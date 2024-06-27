@@ -1,5 +1,6 @@
 package com.hotelaria.projetohotelpesca.services;
 
+import com.hotelaria.projetohotelpesca.entities.Cliente;
 import com.hotelaria.projetohotelpesca.entities.Solicitacao;
 import com.hotelaria.projetohotelpesca.repositories.SolicitacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,9 @@ public class SolicitacaoService {
 
     public List<Solicitacao> listarTodas() {
         return solicitacaoRepository.findAll();
+    }
+
+    public List<Solicitacao> buscarPorCliente(Cliente cliente) {
+        return solicitacaoRepository.findByCliente(cliente);
     }
 }

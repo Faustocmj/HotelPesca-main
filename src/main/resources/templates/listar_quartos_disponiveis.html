@@ -26,6 +26,7 @@
                     <td th:text="${quarto.categoria}">Categoria</td>
                     <td>
                         <form th:action="@{/solicitacoes/reservar/{numQuarto}(numQuarto=${quarto.numQuarto})}" method="post">
+                            <input type="hidden" name="clienteId" th:value="${clienteId}"/>
                             <button type="submit">Reservar</button>
                         </form>
                     </td>

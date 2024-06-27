@@ -3,35 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Solicitações</title>
+    <title>Listar Solicitações</title>
     <link rel="stylesheet" href="/assets/css/painel.css">
 </head>
 <body>
     <header class="header">
-        <h1>Lista de Solicitações</h1>
+        <h1>Listar Solicitações</h1>
     </header>
+
     <div class="container">
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Código</th>
                     <th>Cliente</th>
                     <th>Colaborador</th>
                     <th>Data de Criação</th>
                     <th>Status</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="solicitacao : ${solicitacoes}">
-                    <td th:text="${solicitacao.codSolicitacao}">ID</td>
+                    <td th:text="${solicitacao.codSolicitacao}">Código</td>
                     <td th:text="${solicitacao.clienteNome}">Cliente</td>
                     <td th:text="${solicitacao.colaboradorNome}">Colaborador</td>
                     <td th:text="${solicitacao.dataCriacao}">Data de Criação</td>
                     <td th:text="${solicitacao.status}">Status</td>
+                    <td>
+                        <form th:action="@{/solicitacoes/aprovar/{id}(id=${solicitacao.codSolicitacao})}" method="post">
+                            <input type="hidden" name="colaboradorId" th:value="${colaboradorId}">
+                            <button type="submit">Aprovar</button>
+                        </form>
+                        <form th:action="@{/solicitacoes/negar/{id}(id=${solicitacao.codSolicitacao})}" method="post">
+                            <input type="hidden" name="colaboradorId" th:value="${colaboradorId}">
+                            <button type="submit">Negar</button>
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
     <footer class="footer">
         &copy; 2024 Star Hotel
     </footer>

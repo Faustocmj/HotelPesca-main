@@ -20,11 +20,6 @@ public class UserController {
     @Autowired
     private UsuarioService userService;
 
-    @GetMapping("/login/cliente")
-    public String home(){
-        return "login";
-    }
-
     @GetMapping("/register")
     public String registra() {
         return "register";

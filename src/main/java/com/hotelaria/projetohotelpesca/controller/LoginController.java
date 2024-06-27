@@ -35,7 +35,7 @@ public class LoginController {
             Cliente cliente = clienteService.buscarPorCod(usuarioService.findByUsuario(usuario).getCodUsuario().intValue());
             if (cliente != null) {
                 model.addAttribute("cliente", cliente);
-                return "listar_quartos_disponiveis";
+                return "redirect:/painel/cliente?clienteId=" + cliente.getCodUsuario();
             }
         }
         model.addAttribute("error", "Usuário ou senha inválidos");
@@ -53,7 +53,7 @@ public class LoginController {
             Colaborador colaborador = colaboradorService.buscarPorCod(usuarioService.findByUsuario(usuario).getCodUsuario().intValue());
             if (colaborador != null) {
                 model.addAttribute("colaborador", colaborador);
-                return "redirect:/solicitacoes";
+                return "redirect:/painel/colaborador?colaboradorId=" + colaborador.getCodUsuario();
             }
         }
         model.addAttribute("error", "Usuário ou senha inválidos");
