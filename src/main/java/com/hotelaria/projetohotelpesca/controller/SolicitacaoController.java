@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -90,7 +88,6 @@ public class SolicitacaoController {
                 solicitacaoService.save(solicitacao);
             }
         } catch (Exception e) {
-            // Trate a exceção conforme necessário
             e.printStackTrace();
         }
         return "sucesso";

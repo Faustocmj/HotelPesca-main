@@ -22,6 +22,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
+            text-align: center; /* Centralizar elementos dentro do container */
         }
         .login-container h1 {
             margin-bottom: 20px;
@@ -47,6 +48,7 @@
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
+            margin-bottom: 10px; /* Espaçamento abaixo do botão */
         }
         .login-container button:hover {
             background-color: #218838;
@@ -54,6 +56,24 @@
         .login-container .error {
             color: red;
             margin-bottom: 10px;
+        }
+        /* Estilos para o botão "Acessar como colaborador" */
+        .login-container .access-as-colaborador {
+            position: absolute;
+            bottom: 10px; /* Distância do botão ao rodapé */
+            right: 10px; /* Distância do botão à direita */
+        }
+        .login-container .access-as-colaborador button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .login-container .access-as-colaborador button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -68,6 +88,12 @@
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
         </form>
+        
+        <div class="access-as-colaborador">
+            <form action="/loginColaborador">
+                <button type="submit">Acessar como colaborador</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

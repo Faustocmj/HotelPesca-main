@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping
 public class IndexController {
 
     // @Autowired

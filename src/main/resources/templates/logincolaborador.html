@@ -55,6 +55,24 @@
             color: red;
             margin-bottom: 10px;
         }
+
+        .login-container .access-as-cliente {
+            position: absolute;
+            bottom: 10px; /* Distância do botão ao rodapé */
+            right: 10px; /* Distância do botão à direita */
+        }
+        .login-container .access-as-cliente button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .login-container .access-as-cliente button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +86,11 @@
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
         </form>
+        <div class="access-as-cliente">
+            <form action="/loginCliente">
+                <button type="submit">Acessar como cliente</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

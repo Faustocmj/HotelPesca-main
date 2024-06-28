@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Solicitações</title>
     <link rel="stylesheet" href="/assets/css/painel.css">
+    <link rel="stylesheet" href="/assets/css/editar.css">
 </head>
 <body>
     <header class="header">
@@ -12,6 +13,7 @@
     </header>
 
     <div class="container">
+        <h2>Solicitações do Cliente</h2>
         <table>
             <thead>
                 <tr>
@@ -31,13 +33,13 @@
                     <td th:text="${solicitacao.dataCriacao}">Data de Criação</td>
                     <td th:text="${solicitacao.status}">Status</td>
                     <td>
-                        <form th:action="@{/solicitacoes/aprovar/{id}(id=${solicitacao.codSolicitacao})}" method="post">
+                        <form th:action="@{/solicitacoes/aprovar/{id}(id=${solicitacao.codSolicitacao})}" method="post" style="display:inline;">
                             <input type="hidden" name="colaboradorId" th:value="${colaboradorId}">
-                            <button type="submit">Aprovar</button>
+                            <button type="submit" class="btn btn-success">Aprovar</button>
                         </form>
-                        <form th:action="@{/solicitacoes/negar/{id}(id=${solicitacao.codSolicitacao})}" method="post">
+                        <form th:action="@{/solicitacoes/negar/{id}(id=${solicitacao.codSolicitacao})}" method="post" style="display:inline;">
                             <input type="hidden" name="colaboradorId" th:value="${colaboradorId}">
-                            <button type="submit">Negar</button>
+                            <button type="submit" class="btn btn-danger">Negar</button>
                         </form>
                     </td>
                 </tr>

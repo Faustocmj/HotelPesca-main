@@ -1,22 +1,14 @@
 package com.hotelaria.projetohotelpesca.controller;
 
-import com.hotelaria.projetohotelpesca.entities.Cliente;
-import com.hotelaria.projetohotelpesca.entities.Colaborador;
 import com.hotelaria.projetohotelpesca.entities.Quarto;
-import com.hotelaria.projetohotelpesca.entities.Solicitacao;
 import com.hotelaria.projetohotelpesca.enums.CategoriaQuarto;
 import com.hotelaria.projetohotelpesca.enums.Disponibilidade;
-import com.hotelaria.projetohotelpesca.enums.Status;
-import com.hotelaria.projetohotelpesca.services.ClienteService;
 import com.hotelaria.projetohotelpesca.services.QuartoService;
-import com.hotelaria.projetohotelpesca.services.SolicitacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -76,26 +68,4 @@ public class QuartoController {
         model.addAttribute("clienteId", clienteId);
         return "listar_quartos_disponiveis";
     }
-
-
-    // @PostMapping("/solicitacoes/reservar/{numQuarto}")
-    // public String reservarQuarto(@PathVariable Integer numQuarto, @RequestParam("clienteId") Integer clienteId) {
-    //     Cliente cliente = clienteService.buscarPorCod(clienteId);
-    //     if (cliente != null) {
-    //         Solicitacao solicitacao = new Solicitacao();
-    //         solicitacao.setCliente(cliente);
-    //         solicitacao.setColaborador(null);  // Deixe o colaborador como nulo
-    //         solicitacao.setStatus(Status.ABERTO);
-
-    //         solicitacaoService.save(solicitacao); 
-
-    //         // Atualize a disponibilidade do quarto para INDISPONIVEL
-    //         Quarto quarto = quartoService.buscarPorCod(numQuarto);
-    //         if (quarto != null) {
-    //             quarto.setDisponibilidade(Disponibilidade.INDISPONIVEL);
-    //             quartoService.saveQuarto(quarto);
-    //         }
-    //     }
-    //     return "redirect:/quartosDisponiveis";
-    // }
 }
