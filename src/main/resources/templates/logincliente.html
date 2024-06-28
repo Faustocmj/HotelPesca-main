@@ -57,6 +57,16 @@
             color: red;
             margin-bottom: 10px;
         }
+        .login-container .register-link {
+            margin-top: 10px;
+        }
+        .login-container .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-container .register-link a:hover {
+            text-decoration: underline;
+        }
         /* Estilos para o botão "Acessar como colaborador" */
         .login-container .access-as-colaborador {
             position: absolute;
@@ -88,6 +98,10 @@
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
         </form>
+        
+        <div class="register-link">
+            <p>Não tem uma conta? <a href="/clientes/cadastro">Registre-se</a></p>
+        </div>
         
         <div class="access-as-colaborador">
             <form action="/loginColaborador">
